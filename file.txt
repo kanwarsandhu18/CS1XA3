@@ -2,4 +2,7 @@
 hey
 chicken
 pig 
+drop 
+catch
 
+getty
