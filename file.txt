@@ -4,6 +4,6 @@ chicken
 pig 
 drop 
 ball
-loose 
+
 
 getty
