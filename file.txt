@@ -3,6 +3,7 @@ hey
 chicken
 pig 
 drop 
-catch
+ball
+loose 
 
 getty
