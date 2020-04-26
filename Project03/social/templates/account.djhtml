@@ -9,6 +9,14 @@
                 <div class="w3-container w3-padding">
                     <h6 class="w3-opacity">Change Password</h6>
                     <!--                     TODO Objective 3: Add Password Change Form -->
+                    {% block content %}
+                        <form method="post" id="form" action="{% url 'social:account_view' %}">
+                        {% csrf_token %}
+                        {{ form }}
+                        <input type="submit" value="Submit" />
+                        </form>
+                    {% endblock %}
+
                 </div>
             </div>
         </div>
@@ -19,8 +27,38 @@
                 <div class="w3-container w3-padding">
                     <h6 class="w3-opacity">Update Info</h6>
                     <!--                     TODO Objective 3: Add User Info Update Forms -->
+                    
+
+                    <form method="post" id="userinform" action="{% url 'social:messages_view' %}">
+                     {% csrf_token %}
+                     <p style="color:red"> Add correct datetime format </p>
+                    <input type="text" name="employ" placeHolder="Employment" value="{{ user_info.employment }}">
+                    <input type="text" name="locate" placeHolder="Location" value="{{ user_info.location }}">
+                    
+                    <input type="text" name="birth" placeHolder="YYYY-MM-DD" ">
+                    <button type="submit">update</button>
+                    </form>
+                    
+
+
+
+                    
+
+                  <p>  <form method ="post" action="{% url 'social:updateInt_view' %}" id="inter_form">
+                      {% csrf_token %}
+                      <input type="text" name="fname" placeHolder="Add interest">
+                       <button type="submit">Add</button>
+                    </form> </p>
+                
+
+
+                    
+
+                    
+
                 </div>
             </div>
         </div>
     </div>
 {% endblock %}
+

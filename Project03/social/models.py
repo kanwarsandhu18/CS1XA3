@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from django import forms
 class Interest(models.Model):
     label = models.CharField(max_length=30,primary_key=True)
 
@@ -16,11 +16,12 @@ class UserInfo(models.Model):
                                 on_delete=models.CASCADE,
                                 primary_key=True)
     objects = UserInfoManager()
-    employment = models.CharField(max_length=30,default='Unspecified')
+    employment = models.CharField(max_length=30,default= 'Unspecified' )
     location = models.CharField(max_length=50,default='Unspecified')
     birthday = models.DateField(null=True,blank=True)
     interests = models.ManyToManyField(Interest)
     friends = models.ManyToManyField('self')
+
 
 class Post(models.Model):
     owner = models.ForeignKey(UserInfo,
